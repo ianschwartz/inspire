@@ -1,0 +1,22 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+body {
+  background: #0DC851;
+}
+.poster {
+  background: black;
+  padding: 25px;
+  margin-top: 30px;
+  font-family: 'Lora', serif;
+  color: #8EFAA0;
+  border-width: 3px;
+  border-color: #A5D9A5;
+  border-style: solid;
+  img {
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+  }
+}
