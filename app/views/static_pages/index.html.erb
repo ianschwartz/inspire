@@ -1,4 +1,8 @@
-<div class="col-sm-6 col-sm-offset-3 text-center poster">
+<div class="col-sm-8 col-sm-offset-2 text-center poster">
     <%= image_tag(@poster.image) %>
     <h3><%= @poster.text %></h3>
+</div>
+
+<div class="col-sm-6 col-sm-offset-3 text-center buttons">
+  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
 </div>
