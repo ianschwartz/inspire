@@ -1,3 +1,7 @@
+/*
+*= require social-share-button
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lora);
@@ -26,6 +30,9 @@ body {
 }
 
 .buttons {
-  clear: left;
   padding-top: 25px;
+  .icon {
+    padding-top: 25px;
+    max-width: 80px;
+  }
 }

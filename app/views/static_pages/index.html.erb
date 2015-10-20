@@ -3,6 +3,17 @@
     <h3><%= @poster.text %></h3>
 </div>
 
+<div class="col-sm-2 buttons">
+  <%= link_to "Share with facebook", share_with_facebook_url({ 
+            :url   => "http://www.wealsodocookies.com",
+            :title => "Freelance Rails developer",
+            :images => {0 => "http://wealsodocookies.com/images/logo.png"},
+            :summary => "Pragmatic Ruby on Rails development company" }) %>
+
+
+</div>
+
 <div class="col-sm-6 col-sm-offset-3 text-center buttons">
   <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
 </div>
+
