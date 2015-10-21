@@ -5,10 +5,14 @@ class Scrape
     @imagepage = Nokogiri::HTML(open('https://www.flickr.com/explore/interesting/7days/'))
   end
 
-  def text
+  def link
     links = @textpage.css('div.link a.title')
-    link = links[rand(25)].text
-    link
+    @link ||= links[rand(25)]
+    @link
+  end
+
+  def text
+    "#{link.text}"
   end
 
   def image
@@ -17,5 +21,9 @@ class Scrape
     # @image[rand(10)]['href']
     image = page2.at_css("img.main-photo")['src']
     "http:#{image}"
+  end
+
+  def post
+    Poster.new(text: text, image: image)
   end
 end

@@ -1,19 +1,18 @@
 <div class="col-sm-8 col-sm-offset-2 text-center poster">
+  <%= form_for Poster.new do |f| %>
     <%= image_tag(@poster.image) %>
     <h3><%= @poster.text %></h3>
+    <%= f.hidden_field :text, value: "#{@poster.text}" %>
+    <%= f.hidden_field :image, value: "#{@poster.image}" %>
+    <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
+  <% end %>
 </div>
 
 <div class="col-sm-2 buttons">
-  <%= link_to "Share with facebook", share_with_facebook_url({ 
-            :url   => "http://www.wealsodocookies.com",
-            :title => "Freelance Rails developer",
-            :images => {0 => "http://wealsodocookies.com/images/logo.png"},
-            :summary => "Pragmatic Ruby on Rails development company" }) %>
-
-
+  <%= link_to image_tag('twitter.png', class: 'icon'), "http://twitter.com/share?text=#{@poster.text}", class: "twitter popup" %>
 </div>
 
 <div class="col-sm-6 col-sm-offset-3 text-center buttons">
-  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
+  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %><br /><br />
 </div>
 
