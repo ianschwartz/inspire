@@ -1,0 +1,16 @@
+<%= render 'posters' %>
+
+<div class="col-sm-8 text-center">
+  <%= form_for Poster.new do |f| %>
+    <div class="poster">
+      <%= image_tag(@poster.image) %>
+      <h3><%= @poster.text %></h3>
+      <%= f.hidden_field :text, value: "#{@poster.text}" %>
+      <%= f.hidden_field :image, value: "#{@poster.image}" %>
+    </div>
+    <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
+    <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%= render 'buttons' %>

@@ -7,7 +7,9 @@
 
 body {
   background: #0DC851;
+  padding-top: 25px;
 }
+
 .poster {
   background: black;
   padding: 25px;
@@ -29,9 +31,24 @@ body {
 }
 
 .buttons {
-  padding-top: 25px;
   .icon {
     padding-top: 25px;
     max-width: 80px;
+  }
+}
+
+.posters {
+  list-style: none;
+  background: #09480E;
+  padding: 20px 10px 10px 10px;
+  text-align: left;
+  li {
+    padding-top: 5px;
+    a {
+      color: #96F88D;
+    }
+  }
+  .icon {
+    max-width: 100%;
   }
 }
