@@ -11,17 +11,17 @@ class Scrape
   end
 
   def link
-    links = @textpage.css('div.link a.title')
+    links = @textpage.css('div.link')
     @link ||= links[rand(25)]
-    @link
+    @link.css('a.title')
   end
 
   def text
-    "#{link.text}"
+    link.text
   end
 
   def url
-    "https://www.reddit.com#{link['href']}"
+    @link.css('a.comments').map { |link| link['href'] }.first
   end
 
   def imagelink

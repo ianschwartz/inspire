@@ -4,7 +4,8 @@
   <%= form_for Poster.new do |f| %>
     <div class="poster">
       <%= link_to image_tag(@poster.image), @poster.imagelink %>
-      <h3><%= link_to @poster.text, @poster.url %></h3>
+      <h3><%= link_to @poster.text, "#{@poster.url}" %></h3>
+      <%= @poster.url %>
       <%= f.hidden_field :text, value: "#{@poster.text}" %>
       <%= f.hidden_field :image, value: "#{@poster.image}" %>
       <%= f.hidden_field :link, value: "#{@poster.url}" %>
