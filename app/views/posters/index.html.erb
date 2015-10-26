@@ -1,21 +1,29 @@
-<%= render 'posters' %>
+<div class="col-sm-4 buttons header">
+  <%= form_for @poster.post do |f| %>
+    <%= f.hidden_field :text, value: "#{@poster.subreddit_link_text}" %>
+    <%= f.hidden_field :image, value: "#{@poster.flickr_image}" %>
+    <%= f.hidden_field :link, value: "#{@poster.subreddit_link_url}" %>
+    <%= f.hidden_field :imageurl, value: "#{@poster.flickr_imagelink_url}" %>
+    <%= f.submit 'Save and Share', class: 'btn btn-primary btn-lg', data: {disable_with: "Please wait..."} %>
+  <% end %>
+</div>
+<div class="col-sm-12 text-center">
+    <div class="poster row">
+      <div class="col-sm-12">
+        <%= link_to image_tag(@poster.flickr_image), @poster.flickr_imagelink_url %>
+      </div>
+      <div class="col-sm-6 col-sm-offset-3">
+        <h3><%= link_to @poster.subreddit_link_text, "#{@poster.subreddit_link_url}" %></h3>
+      </div>
+    </div><br />
 
-<div class="col-sm-8 text-center">
-  <%= form_for Poster.new do |f| %>
-    <div class="poster">
-      <%= link_to image_tag(@poster.flickr_image), @poster.flickr_imagelink_url %>
-      <h3><%= link_to @poster.subreddit_link_text, "#{@poster.subreddit_link_url}" %></h3>
-      <%= f.hidden_field :text, value: "#{@poster.subreddit_text}" %>
-      <%= f.hidden_field :image, value: "#{@poster.flickr_image}" %>
-      <%= f.hidden_field :link, value: "#{@poster.subreddit_link}" %>
-      <%= f.hidden_field :imageurl, value: "#{@poster.flickr_imagelink_url}" %>
+  <%= form_tag(posters_path, :method => 'get', id: 'subreddit-form', class: 'form-inline') do %>
+    <div class="form-group">
+      <%= label_tag 'Use a Different Subreddit:' %>
+      <%= text_field_tag :subreddit, (params[:subreddit] || "quotes/new"), class: "form-control" %>
+      <%= submit_tag "Click for a new poster!", class: "btn btn-primary", data: {disable_with: "Please wait..."} %>
     </div>
-    <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
-  <% end %><br />
-
-  <%= form_tag(posters_path, :method => 'get', id: 'subreddit-form') do %>
-    <b>Use a different subreddit:</b> 
-    <%= text_field_tag :subreddit, (params[:subreddit] || "quotes/new") %>
-    <%= submit_tag "Click for a new poster!", class: "btn btn-primary" %>
   <% end %>
 </div>    
+<br />
+<%= render 'posters' %>

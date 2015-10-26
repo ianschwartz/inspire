@@ -1,9 +1,14 @@
-<%= render 'posters' %>
-
-<div class="col-sm-8 text-center">
-  <div class="poster">
-    <%= link_to image_tag(@poster.image), @poster.imageurl %>
-    <h3><%= link_to @poster.text, @poster.link %></h3>
-  </div>
-  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
+<div class="col-sm-4 buttons header">
+  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary btn-lg", data: {disable_with: "Please wait..."} %>
 </div>
+<div class="col-sm-12 text-center">
+  <div class="poster row">
+    <div class="col-sm-12">
+      <%= link_to image_tag(@poster.image), @poster.imageurl %>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3">
+      <h3><%= link_to @poster.text, @poster.link %></h3>
+    </div>
+  </div>
+</div>
+<%= render 'posters' %>

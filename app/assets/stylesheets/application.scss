@@ -3,22 +3,35 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(https://fonts.googleapis.com/css?family=Lora);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-  background: #0DC851;
-  padding-top: 25px;
+  font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-  font-family: 'IM Fell English SC', serif;
-  font-size: 500%;
-  a {
-    color: #1041A6;
+.header {
+  background: #D5D5D5;
+  height: 100px;
+  h1 {
+    font-weight: bold;
+    a {
+      color: #353935;
+    }
   }
 }
-h2, h3, h4 {
-  font-family: 'IM Fell English SC', serif;
+
+h1,h3 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.buttons {
+  padding-top: 20px;
+  text-align: right;
+  .btn-lg {
+    background: #76A681;
+    font-family: 'Roboto Slab', serif;
+  }
 }
 
 .poster {
@@ -34,32 +47,26 @@ h2, h3, h4 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
+    padding: 25px;
+    max-width: 150%;
     border-width: 3px;
     border-color: white;
     border-style: solid;
   }
 }
-
-.buttons {
-  .icon {
-    padding-top: 25px;
-    max-width: 80px;
-  }
-}
-
 .posters {
   list-style: none;
-  background: #09480E;
-  padding: 20px 10px 10px 10px;
-  text-align: left;
-  li {
-    padding-top: 5px;
-    a {
-      color: #96F88D;
+  padding-top: 25px;
+  .poster {
+    padding-top: 25px;
+    .icon {
+      max-width: 100%;
+      height: 250px;
+      margin-right: auto;
+      margin-left: auto;
     }
-  }
-  .icon {
-    max-width: 100%;
+    .poster-text {
+      height: 80px;
+    }
   }
 }
