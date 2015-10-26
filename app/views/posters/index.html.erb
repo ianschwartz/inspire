@@ -9,8 +9,12 @@
       <%= f.hidden_field :image, value: "#{@poster.image}" %>
     </div>
     <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
-    <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
-  <% end %>
-</div>
+  <% end %><br />
 
+  <%= form_tag(posters_path, :method => 'get', id: 'subreddit-form') do %>
+    <b>Use a different subreddit:</b> 
+    <%= text_field_tag :subreddit, (params[:subreddit] || "quotes/new") %>
+    <%= submit_tag "Click for a new poster!", class: "btn btn-primary" %>
+  <% end %>
+</div>    
 <%= render 'buttons' %>

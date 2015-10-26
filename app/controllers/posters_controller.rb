@@ -1,7 +1,11 @@
 class PostersController < ApplicationController
   def index
-    @poster = Scrape.new
     @posters = Poster.all[0..5]
+    if params[:subreddit]
+      @poster = Scrape.new(params[:subreddit])
+    else
+      @poster = Scrape.new('quotes/new')
+    end
   end
 
   def create

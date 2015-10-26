@@ -1,7 +1,12 @@
 class Scrape
   require 'open-uri'
-  def initialize
-    @textpage = Nokogiri::HTML(open('https://www.reddit.com/r/quotes/new'))
+  def initialize(sub)
+    if sub == ""
+      @sub = "https://www.reddit.com/"
+    else
+      @sub = "https://www.reddit.com/r/#{sub}"
+    end
+    @textpage = Nokogiri::HTML(open(@sub))
     @imagepage = Nokogiri::HTML(open('https://www.flickr.com/explore/interesting/7days/'))
   end
 
