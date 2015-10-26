@@ -3,12 +3,12 @@
 <div class="col-sm-8 text-center">
   <%= form_for Poster.new do |f| %>
     <div class="poster">
-      <%= link_to image_tag(@poster.image), @poster.imagelink %>
-      <h3><%= link_to @poster.text, "#{@poster.url}" %></h3>
-      <%= f.hidden_field :text, value: "#{@poster.text}" %>
-      <%= f.hidden_field :image, value: "#{@poster.image}" %>
-      <%= f.hidden_field :link, value: "#{@poster.url}" %>
-      <%= f.hidden_field :imageurl, value: "#{@poster.imagelink}" %>
+      <%= link_to image_tag(@poster.flickr_image), @poster.flickr_imagelink_url %>
+      <h3><%= link_to @poster.subreddit_link_text, "#{@poster.subreddit_link_url}" %></h3>
+      <%= f.hidden_field :text, value: "#{@poster.subreddit_text}" %>
+      <%= f.hidden_field :image, value: "#{@poster.flickr_image}" %>
+      <%= f.hidden_field :link, value: "#{@poster.subreddit_link}" %>
+      <%= f.hidden_field :imageurl, value: "#{@poster.flickr_imagelink_url}" %>
     </div>
     <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
   <% end %><br />
