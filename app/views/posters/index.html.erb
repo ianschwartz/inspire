@@ -7,6 +7,8 @@
       <h3><%= link_to @poster.text, @poster.url %></h3>
       <%= f.hidden_field :text, value: "#{@poster.text}" %>
       <%= f.hidden_field :image, value: "#{@poster.image}" %>
+      <%= f.hidden_field :link, value: "#{@poster.url}" %>
+      <%= f.hidden_field :imageurl, value: "#{@poster.imagelink}" %>
     </div>
     <%= f.submit 'Save and Share', class: 'btn btn-primary' %>
   <% end %><br />
@@ -17,4 +19,3 @@
     <%= submit_tag "Click for a new poster!", class: "btn btn-primary" %>
   <% end %>
 </div>    
-<%= render 'buttons' %>

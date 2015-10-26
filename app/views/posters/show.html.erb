@@ -2,10 +2,8 @@
 
 <div class="col-sm-8 text-center">
   <div class="poster">
-    <%= image_tag(@poster.image) %>
-    <h3><%= @poster.text %></h3>
+    <%= link_to image_tag(@poster.image), @poster.imageurl %>
+    <h3><%= link_to @poster.text, @poster.link %></h3>
   </div>
   <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary" %>
 </div>
-
-<%= render 'buttons' %>

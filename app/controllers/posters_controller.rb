@@ -24,6 +24,6 @@ class PostersController < ApplicationController
   private
 
   def poster_params
-    params.require(:poster).permit(:text, :image)
+    params.require(:poster).permit(:text, :image, :link, :imageurl)
   end
 end
