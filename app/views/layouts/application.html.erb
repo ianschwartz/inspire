@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inspire</title>
+  <title>Inspira</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,11 @@
 <body>
   <div class="container">
     <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1><%= link_to "INSPIRA", root_path %></h1>
+        pictures from flickr<br />
+        quotes from reddit
+      </div>
       <%= yield %>
     </div>
   </div>

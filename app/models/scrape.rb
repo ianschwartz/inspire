@@ -20,11 +20,18 @@ class Scrape
     "#{link.text}"
   end
 
+  def url
+    "https://www.reddit.com#{link['href']}"
+  end
+
+  def imagelink
+    "https://www.flickr.com#{@imagepage.at_css("td.Owner a")['href']}"
+  end
+
   def image
-    link = @imagepage.at_css("td.Owner a")['href']
-    page2 = Nokogiri::HTML(open("https://www.flickr.com#{link}"))
+    page = Nokogiri::HTML(open(imagelink))
     # @image[rand(10)]['href']
-    image = page2.at_css("img.main-photo")['src']
+    image = page.at_css("img.main-photo")['src']
     "http:#{image}"
   end
 

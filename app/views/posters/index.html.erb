@@ -3,8 +3,8 @@
 <div class="col-sm-8 text-center">
   <%= form_for Poster.new do |f| %>
     <div class="poster">
-      <%= image_tag(@poster.image) %>
-      <h3><%= @poster.text %></h3>
+      <%= link_to image_tag(@poster.image), @poster.imagelink %>
+      <h3><%= link_to @poster.text, @poster.url %></h3>
       <%= f.hidden_field :text, value: "#{@poster.text}" %>
       <%= f.hidden_field :image, value: "#{@poster.image}" %>
     </div>
