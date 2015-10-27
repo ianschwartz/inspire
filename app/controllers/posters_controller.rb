@@ -1,6 +1,7 @@
 class PostersController < ApplicationController
+  before_action :all_posters, only: [:index, :show]
+
   def index
-    @posters = Poster.all[0..5]
     if params[:subreddit]
       @poster = Scrape.new(params[:subreddit])
     else
@@ -25,5 +26,9 @@ class PostersController < ApplicationController
 
   def poster_params
     params.require(:poster).permit(:text, :image, :link, :imageurl)
+  end
+
+  def all_posters
+    @posters = Poster.paginate(:page => params[:page], :per_page => 6)
   end
 end

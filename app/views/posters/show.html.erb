@@ -11,4 +11,12 @@
     </div>
   </div>
 </div>
-<%= render 'posters' %>
+<div class="jumbotron text-center">
+  <div class="row">
+    <div class="posters">
+      <h3>Recent Motivational Posters:</h3>
+      <%= will_paginate @posters %><br />
+      <%= render @posters %>
+    </div>
+  </div>
+</div>

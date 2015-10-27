@@ -2,7 +2,8 @@
   <div class="row">
     <div class="posters">
       <h3>Recent Motivational Posters:</h3>
-      <%= render Poster.first(8) %>
+      <%= will_paginate @posters %><br />
+      <%= render @posters %>
     </div>
   </div>
 </div>
