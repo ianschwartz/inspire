@@ -1,6 +1,8 @@
 <div class="col-xs-6 poster">
-  <%= link_to image_tag(poster.image, class: "icon"), poster %><br />
   <div class="row">
+    <div class="col-sm-12">
+      <%= link_to image_tag(poster.image, class: "icon"), poster %><br />
+    </div>
     <div class="col-xs-6 col-xs-offset-3 poster-text">
       <%= link_to poster.feedtext, poster %>
     </div>
