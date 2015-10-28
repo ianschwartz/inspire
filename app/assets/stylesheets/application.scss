@@ -76,6 +76,7 @@ h1,h3 {
 }
 
 #poster {
+
 }
 
 #text {
@@ -85,6 +86,7 @@ h1,h3 {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Roboto Slab', serif;
 }
 
 #icon {
@@ -96,28 +98,26 @@ h1,h3 {
 }
 
 .center {
-  margin: auto;
-  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #credits {
+  font-family: 'Roboto Slab', serif;
   display: block;
   background: #000;
   -webkit-transform: rotate(-90deg); 
   -moz-transform: rotate(-90deg);
-  color: #3A94A2;
   position: fixed;
   top: 270px;
   right: -210px;
   text-align: right;
   font-size: 11px;
   padding: 10px;
+  color: #565656;
 }
 
 #headline {
-  color: #A2DBE4;
-  text-align: center;
   background: black;
-  position: relative;
-  bottom: -20px;
+  font-family: 'Roboto Slab', serif;
 }
