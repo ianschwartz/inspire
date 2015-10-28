@@ -24,7 +24,7 @@ class PostersController < ApplicationController
       format.html
       format.png do
         expires_in 24.hours, public: true
-        kit = IMGKit.new render_to_string, width: 800, height: 590
+        kit = IMGKit.new render_to_string
         kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/application.scss"
         send_data kit.to_png, type: "image/png", disposition: "inline"
       end

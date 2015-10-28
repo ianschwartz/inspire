@@ -103,12 +103,7 @@ h1,h3 {
   font-family: 'Roboto Slab', serif;
   display: block;
   background: #000;
-  -webkit-transform: rotate(-90deg); 
-  -moz-transform: rotate(-90deg);
-  position: fixed;
-  top: 270px;
-  right: -210px;
-  text-align: right;
+  text-align: center;
   font-size: 11px;
   padding: 10px;
   color: #565656;
@@ -117,4 +112,5 @@ h1,h3 {
 #headline {
   background: black;
   font-family: 'Roboto Slab', serif;
+  color: #6E6E6E;
 }
