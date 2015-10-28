@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Inspira is an app and portfolio project I developed to explore a couple of technologies I was interested in.
 
-Things you may want to cover:
+It uses the nokogiri gem to scrape Reddit and Instagram for quotations and images, and formats like a motivational poster. Sometimes the results are funny, sometimes inspirational, sometimes nonsense. 
 
-* Ruby version
+The actual scraping is done by a service object, scrape.rb, which formats all the data as needed.
 
-* System dependencies
+If you like what you see, you can save it to the database (poster.rb), allowing you to share it by link or by a generated .png image (courtesy of the IMGkit gem).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I am 100% self-taught using internet resources, so if you have any ideas for improving the app, I'd love to hear them.
