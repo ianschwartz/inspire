@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'posters#index'
+  root 'posters#new'
   resources :posters
 
 

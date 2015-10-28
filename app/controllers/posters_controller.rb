@@ -1,7 +1,7 @@
 class PostersController < ApplicationController
-  before_action :all_posters, only: [:index, :show]
+  before_action :all_posters, only: [:new, :show]
 
-  def index
+  def new
     if params[:subreddit]
       @poster = Scrape.new(params[:subreddit])
     else
