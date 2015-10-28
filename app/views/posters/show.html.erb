@@ -1,5 +1,6 @@
 <div class="col-sm-4 buttons header">
-  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary btn-lg", data: {disable_with: "Please wait..."} %>
+  <%= link_to "Click for a new poster!", root_path, class: "btn btn-primary btn-lg", data: {disable_with: "Please wait..."} %><br />
+  <%= link_to "Sharable Image", "#{request.original_url}.png" %>
 </div>
 <div class="col-sm-12 text-center">
   <div class="poster row">
