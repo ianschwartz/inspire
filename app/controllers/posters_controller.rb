@@ -20,6 +20,15 @@ class PostersController < ApplicationController
 
   def show
     @poster = Poster.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.png do
+        expires_in 24.hours, public: true
+        kit = IMGKit.new render_to_string, width: 600, height: 500
+        kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/application.scss"
+        send_data kit.to_png, type: "image/png", disposition: "inline"
+      end
+    end
   end
 
   private

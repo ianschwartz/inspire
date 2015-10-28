@@ -8,4 +8,8 @@ class Poster < ActiveRecord::Base
       text
     end
   end
+
+  def image_url
+    "https:" + image
+  end
 end
