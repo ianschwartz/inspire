@@ -3,22 +3,19 @@ class Scrape
   
   def initialize(subreddit_name)
     @subreddit_name = subreddit_name
-  end
-
-  def quote
-    Quote.new(@subreddit_name)
+    @quote = Quote.new(@subreddit_name)
   end
 
   def post
-    Poster.new(text: quote.title, image: flickr_image)
+    Poster.new(text: @quote.title, image: flickr_image)
   end
 
   def subreddit_link_text
-    quote.title
+    @quote.title
   end
 
   def subreddit_link_url
-    quote.url
+    @quote.url
   end
 
   def flickr_imagelink_url

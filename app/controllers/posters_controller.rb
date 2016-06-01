@@ -5,7 +5,7 @@ class PostersController < ApplicationController
     if params[:subreddit]
       @poster = Scrape.new(params[:subreddit])
     else
-      @poster = Scrape.new('quotes/new')
+      @poster = Scrape.new('quotes')
     end
   end
 

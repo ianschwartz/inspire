@@ -20,7 +20,7 @@
   <%= form_tag(new_poster_path, :method => 'get', id: 'subreddit-form', class: 'form-inline') do %>
     <div class="form-group">
       <%= label_tag 'Use a Different Subreddit:' %>
-      <%= text_field_tag :subreddit, (params[:subreddit] || "quotes/new"), class: "form-control" %>
+      <%= text_field_tag :subreddit, (params[:subreddit] || "quotes"), class: "form-control" %>
       <%= submit_tag "Click for a new poster!", class: "btn btn-primary", data: {disable_with: "Please wait..."} %>
     </div>
   <% end %>
