@@ -5,24 +5,20 @@ class Scrape
     @subreddit_name = subreddit_name
   end
 
+  def quote
+    Quote.new(@subreddit_name)
+  end
+
   def post
-    Poster.new(text: subreddit_text, image: flickr_image)
+    Poster.new(text: quote.title, image: flickr_image)
   end
 
   def subreddit_link_text
-    subreddit_link.css('a.title').text
+    quote.title
   end
 
   def subreddit_link_url
-    subreddit_link.css('a.comments').map { |link| link['href'] }.first
-  end
-
-  def subreddit_link
-    @subreddit_link ||= subreddit_links[rand(25)]
-  end
-
-  def subreddit_text
-    subreddit_link.text
+    quote.url
   end
 
   def flickr_imagelink_url
@@ -52,7 +48,4 @@ class Scrape
     @flickr_imagepage ||= Nokogiri::HTML(open('https://www.flickr.com/explore/interesting/7days'))
   end
 
-  def reddit_textpage
-    @reddit_textpage ||= Nokogiri::HTML(open(reddit_url))
-  end
 end

@@ -1,14 +1,16 @@
 class Quote
   def initialize(subred)
-    @subreddit = RedditKit.subreddit(subred)
+    subreddit = RedditKit.subreddit(subred)
+    links = RedditKit.links(subreddit).results
+    @link = links[rand(links.length)]
   end
 
-  def links
-    RedditKit.links(@subreddit).results
+  def title 
+    @link.title
   end
 
-  def link
-    links[rand(links.length)]
+  def url
+    @link.permalink
   end
 
   private
