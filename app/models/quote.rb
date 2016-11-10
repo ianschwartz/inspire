@@ -1,7 +1,7 @@
 class Quote
   def initialize(subred)
-    subreddit = RedditKit.subreddit(subred)
-    links = RedditKit.links(subreddit).results
+    sub = RedditKit.subreddit(subred)
+    links = RedditKit.links(sub).results
     @link = links[rand(links.length)]
   end
 

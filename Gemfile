@@ -27,8 +27,7 @@ gem 'will_paginate'
 gem 'imgkit'
 gem 'wkhtmltoimage-binary'
 # reddit api wrapper
-gem 'redditkit', '~> 1.0.1'
-# Use ActiveModel has_secure_password
+gem 'redditkit', :git => 'https://github.com/samsymons/RedditKit.rb'# Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
